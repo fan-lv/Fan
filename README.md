@@ -2,7 +2,7 @@
 <p align="center">这是一个深色主题，如梦幻般的星空，群星闪烁。</p>
 
 
-[Preview](https://lvfan.xyz/)   
+[Preview](https://www.lvfan.xyz/)   
 
 ## 安装
 
