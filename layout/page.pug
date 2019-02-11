@@ -1,0 +1,23 @@
+extends includes/layout
+
+block content
+    article#page
+        if page.type === 'tags'
+            .tag-cloud
+                .tag-cloud-title= _p('menu.tags')
+                span.tag-cloud-line -
+                span.tag-cloud-amount= site.tags.length
+                .tag-cloud-tags!= tagcloud({min_font: 12,max_font: 30,amount: 200,color: true,start_color: '#A4D8FA',end_color: '#0790E8'})
+        else if page.type === 'categories'
+            .category-lists
+                .category-title= _p('page.categories')
+                span.category-line -
+                span.category-amount= site.categories.length
+                div!= list_categories()
+            //.categories!= page.content
+        else
+            article.page
+                h1= _p('menu.' + page.title)
+                .about!= page.content
+            include includes/pagination
+        //div!= paginator()

@@ -1,0 +1,125 @@
+// 分页
+#pagination
+  padding 0 .16rem
+  height .40rem
+  .pagination
+    height .40rem
+    text-align center
+    .prev, .page-number, .next
+      margin 0 .04rem
+      position relative
+      display inline-block
+      width .40rem
+      height .40rem
+      text-align center
+      line-height .40rem
+      text-decoration none
+      overflow hidden
+      border-radius .04rem
+      color $color-font
+      transition $transition-delay
+      font-size .14rem
+      &:after
+        content ''
+        position absolute
+        top 0
+        left 0
+        right 0
+        bottom 0
+        display block
+        width .80rem
+        height .80rem
+        background $rgba-color
+        filter blur(.05rem)
+        margin -.20rem
+        z-index -1
+      &:before
+        content ''
+        position absolute
+        left -.50rem
+        top -.20rem
+        width .30rem
+        height .80rem
+        background linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))
+        transform rotateZ(-30deg)
+      &:hover
+        color: $color-theme
+        transition $transition-delay
+        &:before
+          left .40rem
+          top -.20rem
+          transform rotateZ(0deg)
+          transition $transition-delay
+    .prev
+      margin-left 0
+    .page-number
+      &.current
+        color $color-theme
+        font-size .16rem
+    .next
+      margin-right 0
+    .space
+      display inline-block
+      height .40rem
+      line-height .30rem
+      vertical-align top
+  .pull-left, .pull-right
+    padding 0 .16rem
+    position relative
+    display inline-block
+    height .40rem
+    text-align center
+    line-height .40rem
+    //border-radius 4rem
+    color: $color-font
+    transition $transition-delay
+    font-size .14rem
+    .line
+      position absolute
+      transition $transition-delay
+      background $color-theme
+      &.line-top
+        width 0
+        height .01rem
+        left -110%
+        top -.01rem
+      &.line-right
+        width .01rem
+        height 0
+        right -.01rem
+        top -110%
+      &.line-bottom
+        width .01rem
+        height 0
+        left -.01rem
+        bottom -110%
+      &.line-left
+        width 0
+        height .01rem
+        bottom -.01rem
+        right -110%
+    &:hover
+      transition $transition-delay
+      .line-top
+        width 100%
+        left 0
+      .line-right
+        height 100%
+        top 0
+      .line-bottom
+        height 100%
+        bottom 0
+      .line-left
+        width 100%
+        right 0
+      a
+        transition $transition-delay
+        color $color-theme
+    a
+      transition $transition-delay
+      color $color-font
+      text-decoration none
+  .pull-left
+    float left
+  .pull-right
+    float right

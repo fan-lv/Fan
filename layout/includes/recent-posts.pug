@@ -1,0 +1,40 @@
+if page.posts.length > 0
+    #recent-posts
+        // each post in page.posts.sort('date', -1).limit(10).toArray()
+        // config中配置按照什么排序
+        each post in page.posts.toArray()
+            - var link = post.link || post.path
+            .recent-post-item
+                a.post-title(href=url_for(link))= post.title
+                div.container
+                    if (theme.post_meta.date_type)
+                        - var date_type = theme.post_meta.date_type === 'updated' ? 'updated' : 'date'
+                        - var date_text = theme.post_meta.date_type === 'updated' ? __('post.modified') :__('post.posted')
+                        time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=date_text] #[=date(post[date_type], config.date_format)]
+                    if (theme.post_meta.categories && post.categories.data.length > 0)
+                        .button-hover.categories
+                            each categories in post.categories.data
+                                i.fa.fa-inbox.article-icon(aria-hidden="true")
+                                a.link-a(href=url_for(categories.path)) #[=categories.name]
+                    if (theme.post_meta.tags && post.tags.data.length > 0)
+                        .button-hover.tags
+                            each tags,index in post.tags.data
+                                i.fa.fa-tag.article-icon(aria-hidden="true")
+                                a.link-a(href=url_for(tags.path)) #[=tags.name]
+                                if(index < post.tags.data.length - 1)
+                                    span &nbsp;|&nbsp;
+                .post-content
+                    if (post.layout === 'slides')
+                        .main-content.content
+                            - var iframeLink = post.iframe || link
+                            iframe(src=url_for(iframeLink) frameborder="0")
+                    else if(post.excerpt)
+                        .main-content.content!= post.excerpt
+                    else if theme.auto_excerpt && theme.auto_excerpt.enable
+                        - const content = strip_html(post.content)
+                        - let expert = content.substring(0, theme.auto_excerpt.length)
+                        - content.length > theme.auto_excerpt.length ? expert += ' ...' : ''
+                        .main-content.content!= expert
+                    else
+                        .main-content.content!= post.content
+                a.button-hover.more(href=url_for(link) + '#more')= _p('post.read_more')

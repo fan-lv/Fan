@@ -1,0 +1,75 @@
+.article-sort-item
+  margin 16px 0
+  position relative
+  padding 0 40px
+  height 32px
+  line-height 32px
+  font-size 16px
+  color $color-white
+  .article-time
+    margin-right 24px
+    color #99a9bf
+  .article-link
+    transition $transition-delay
+    &:hover
+      color $color-theme
+      transition $transition-delay
+  &::before
+    content ''
+    display block
+    position absolute
+    left 6px
+    top 9px
+    width 6px
+    height 6px
+    border-radius 50%
+    border 4px solid $color-sub-theme
+    transition $transition-delay
+  &::after
+    content ''
+    display block
+    position absolute
+    left 12px
+    top 22px
+    width 2px
+    height 36px
+    background $color-font
+  &:last-child
+    &::after
+      display none
+  &:hover
+    &::before
+      border-color $color-theme
+      transition $transition-delay
+  &.title
+    height 56px
+    line-height 56px
+    font-size 24px
+    color $color-white
+    &::before
+      top 15px
+      left 0
+      width 10px
+      height 10px
+      border-width 8px
+    &::after
+      top 40px
+      left 12px
+      height 42px
+  &.year
+    margin 16px 0
+    height 40px
+    line-height 40px
+    font-size 20px
+    font-weight 600
+    color $color-white
+    &::before
+      top 10px
+      left 3px
+      width 8px
+      height 8px
+      border-width 6px
+    &::after
+      top 30px
+      left 12px
+      height 36px

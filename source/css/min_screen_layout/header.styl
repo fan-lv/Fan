@@ -1,0 +1,105 @@
+// 导航栏
+#menu-outer
+  padding 0 .16rem
+  display flex
+  flex-direction row
+  justify-content space-between
+  width calc(100% - .32rem)
+  height .56rem
+  line-height .56rem
+  border-bottom 1px solid rgba(173, 181, 189, 0.4)
+  .menu-list-icon
+    display inline-block
+    line-height .56rem
+    cursor pointer
+  #menu-inner.min-menu-inner
+    position absolute
+    top .56rem
+    left 0
+    display block
+    width 100%
+    height 0
+    overflow-y auto
+    background rgba(0, 0, 0, 0.6)
+    transition $transition-delay
+    z-index 99
+    opacity 0
+    .menu-item
+      display block
+      height .56rem
+      line-height .56rem
+      position relative
+      padding 0 .16rem
+      font-size .16rem
+      font-weight bolder
+      transition $transition-delay
+      &:after
+        content ''
+        position absolute
+        left 0
+        bottom 0
+        width 0
+        height .02rem
+        background $color-theme
+        transition $transition-delay
+      &:hover
+        color $color-theme
+        transition $transition-delay
+        &:after
+          width 100%
+          transition $transition-delay
+    &.show-min-menu-inner
+      display block
+      height calc(100vh - .56rem)
+      transition $transition-delay
+      opacity 1
+  .right-info
+    .search
+      cursor pointer
+      position relative
+      font-weight bolder
+      transition $transition-delay
+      &:after
+        content ''
+        position absolute
+        left 50%
+        bottom 0
+        width 0
+        height .02rem
+        background $color-theme
+        transition $transition-delay
+      &:hover
+        color $color-theme
+        transition $transition-delay
+        &:after
+          left 0
+          width 100%
+          transition $transition-delay
+      .fas
+        font-size .12rem
+    .title-name
+      margin-left .16rem
+      position relative
+      font-weight bolder
+      transition $transition-delay
+      &:after
+        content ''
+        position absolute
+        left 50%
+        bottom 0
+        width 0
+        height .02rem
+        background $color-theme
+        transition $transition-delay
+      &:hover
+        color $color-theme
+        transition $transition-delay
+        &:after
+          left 0
+          width 100%
+          transition $transition-delay
+    #now-time
+      display inline-block
+      margin-left .16rem
+      width .8rem
+      text-align right

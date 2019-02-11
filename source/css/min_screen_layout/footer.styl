@@ -1,0 +1,35 @@
+// 底部
+#footer
+  padding 0 .16rem
+  display flex
+  flex-direction row
+  //justify-content right
+  justify-content space-between
+  width calc(100% - .32rem)
+  height .40rem
+  line-height .40rem
+  border-top 1px solid rgba(173, 181, 189, 0.4)
+  font-size .12rem
+  color $color-font
+  #side-button
+    margin-top .04rem
+    width .32rem
+    height .32rem
+    cursor pointer
+    line-height .32rem
+    text-align center
+    transition $transition-delay
+    &.close
+      transition $transition-delay
+      transform rotate(180deg)
+  .right-content
+    display flex
+    flex-direction row
+    .busuanzi
+      margin-right .16rem
+      #busuanzi_container_site_uv, #busuanzi_container_site_pv
+        margin-right .08rem
+      .footer-separator
+        margin 0 .08rem
+    .copyright
+      font-size .12rem

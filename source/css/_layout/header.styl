@@ -1,0 +1,84 @@
+// 导航栏
+#menu-outer
+  padding 0 16px
+  display flex
+  flex-direction row
+  justify-content space-between
+  width calc(100% - 32px)
+  height 56px
+  line-height 56px
+  border-bottom 1px solid rgba(173, 181, 189, 0.4)
+  .menu-list-icon
+    display none
+  #menu-inner
+    .menu-item
+      position relative
+      margin-right 16px
+      font-size 14px
+      font-weight bolder
+      transition $transition-delay
+      &:after
+        content ''
+        position absolute
+        left 0
+        bottom 0
+        width 0
+        height 2px
+        background $color-theme
+        transition $transition-delay
+      &:hover
+        color $color-theme
+        transition $transition-delay
+        &:after
+          width 100%
+          transition $transition-delay
+  .right-info
+    .search
+      cursor pointer
+      position relative
+      font-weight bolder
+      transition $transition-delay
+      &:after
+        content ''
+        position absolute
+        left 50%
+        bottom 0
+        width 0
+        height 2px
+        background $color-theme
+        transition $transition-delay
+      &:hover
+        color $color-theme
+        transition $transition-delay
+        &:after
+          left 0
+          width 100%
+          transition $transition-delay
+      .fas
+        font-size 12px
+    .title-name
+      margin-left 16px
+      position relative
+      font-weight bolder
+      transition $transition-delay
+      &:after
+        content ''
+        position absolute
+        left 50%
+        bottom 0
+        width 0
+        height 2px
+        background $color-theme
+        transition $transition-delay
+      &:hover
+        color $color-theme
+        transition $transition-delay
+        &:after
+          left 0
+          width 100%
+          transition $transition-delay
+    #now-time
+      display inline-block
+      margin-left 16px
+      width 80px
+      text-align right

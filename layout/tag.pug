@@ -1,0 +1,23 @@
+extends includes/layout
+
+block content
+    div#tag
+        h1.article-sort-item.title= _p('page.tags') + ' - ' + page.tag
+        - var year
+        - page.posts.each(function(article){
+            - var tempYear = date(article.date, 'YYYY')
+            if tempYear !== year
+                - year = tempYear
+                .article-sort-item.year= year
+            .article-sort-item
+                if article.link
+                    time.article-time(datetime=date_xml(article.date))= date(article.date)
+                    a.article-link(href=url_for(article.link) target="_blank")
+                        = article.title || 'No Title'
+                else
+                    time.article-time(datetime=date_xml(article.date))= date(article.date)
+                    a.article-link(href=url_for(article.path))= article.title || 'No Title'
+        - })
+    include includes/pagination
+    //div!= paginator()
+

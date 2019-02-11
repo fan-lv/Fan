@@ -1,0 +1,35 @@
+extends includes/layout
+
+block content
+    article#post
+        .post-header
+            .title= page.title
+            .container
+                time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.posted')] #[=date(page['date'], config.date_format)] | #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
+                //time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
+                .button-hover.categories
+                    each categories in page.categories.data
+                        i.fa.fa-inbox.article-icon(aria-hidden="true")
+                        a.link-a(href=url_for(categories.path)) #[=categories.name]
+                .button-hover.tags
+                    each tags,index in page.tags.data
+                        i.fa.fa-tag.article-icon(aria-hidden="true")
+                        a.link-a(href=url_for(tags.path)) #[=tags.name]
+                        if(index < page.tags.data.length - 1)
+                            span &nbsp;|&nbsp;
+        .main-content!= page.content
+        if (theme.post_copyright && theme.post_copyright.enable)
+            .post-copyright
+                .post-copyright-author
+                    span.post-copyright-meta= _p('post.copyright.author') + ": "
+                    span.post-copyright-info
+                        a(href=`mailto:${config.email}`) #[=config.author]
+                .post-copyright-type
+                    span.post-copyright-meta= _p('post.copyright.link') + ": "
+                    span.post-copyright-info
+                        a(href=url_for(page.permalink)) #[=page.permalink]
+                .post-copyright-notice
+                    span.post-copyright-meta= _p('post.copyright.copyright_notice') + ": "
+                    span.post-copyright-info!= _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
+    include includes/pagination
+    //div!= paginator()

@@ -1,0 +1,133 @@
+#search-box
+  > div
+    width 100%
+    max-width 100%
+    height 32px
+  input
+    width 100%
+    height 32px
+    line-height 32px
+    border-radius 32px
+    font-size 14px
+    outline none
+    border 2px solid $color-theme
+
+.algolia-hit-item
+  position relative
+  padding-left 48px
+  height 28px
+  line-height 28px
+  transition $transition-delay
+  &::before
+    content ''
+    position absolute
+    left 0
+    top 6px
+    display block
+    width 16px
+    height 16px
+    border 4px solid $color-sub-theme
+    border-radius 50%
+    transition $transition-delay
+  &:hover
+    &::before
+      border 4px solid $color-theme
+      transition $transition-delay
+  .algolia-hit-item-link
+    display block
+    color $color-font
+    text-decoration none
+    font-size 14px
+    cursor pointer
+    transition $transition-delay
+    &:hover
+      color $color-theme
+      transition $transition-delay
+    em
+      color $color-theme
+      font-weight 700
+
+#algolia-hits-empty
+  display block
+  height 28px
+  line-height 28px
+  color $color-font
+  font-size 14px
+
+#algolia-pagination
+  display block
+  margin 24px 0 8px 0
+  padding 0 16px
+  height 40px
+  background transparent
+  box-shadow none
+  border 0
+  .pagination
+    height 40px
+    text-align center
+    background transparent
+    box-shadow none
+    border 0
+    border-radius 0
+    display block
+    padding 0
+    .ais-pagination--item__previous, .ais-pagination--item__page, .ais-pagination--item__next
+      margin 0 4px
+      padding 0
+      position relative
+      display inline-block
+      width 40px
+      height 40px
+      text-align center
+      line-height 40px
+      text-decoration none
+      overflow hidden
+      border-radius 4px
+      color $color-font
+      transition $transition-delay
+      font-size 14px
+      &:after
+        content ''
+        position absolute
+        top 0
+        left 0
+        right 0
+        bottom 0
+        display block
+        width 80px
+        height 80px
+        background $rgba-color
+        filter blur(5px)
+        margin -20px
+        z-index -1
+      &:before
+        content ''
+        position absolute
+        left -50px
+        top -20px
+        width 30px
+        height 80px
+        background linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))
+        transform rotateZ(-30deg)
+      &:hover
+        color: $color-theme
+        transition $transition-delay
+        &:before
+          left 40px
+          top -20px
+          transform rotateZ(0deg)
+          transition $transition-delay
+      a
+        &:hover
+          color $color-theme
+    .ais-pagination--item__previous
+      margin-left 0
+    .ais-pagination--item__page
+      &.current
+        color $color-theme
+        font-size 16px
+        background none
+        a
+          color $color-theme
+    .ais-pagination--item__next
+      margin-right 0

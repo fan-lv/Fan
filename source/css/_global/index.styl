@@ -1,0 +1,29 @@
+html, body
+  height 100%
+  color $color-font
+  a
+    color $color-font
+    text-decoration none
+  .article-icon
+    color $color-font
+  .button-hover
+    position relative
+    overflow hidden
+    background $rgba-color
+    border-radius 4px
+    cursor pointer
+    &::before
+      content ''
+      position absolute
+      left -50px
+      top -20px
+      width 30px
+      height 80px
+      background linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))
+      transform rotateZ(-30deg)
+    &:hover
+      &::before
+        left 100%
+        top -20px
+        transform rotateZ(0deg)
+        transition $transition-delay

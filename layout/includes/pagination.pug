@@ -1,0 +1,30 @@
+-
+    var options = {
+        prev_text: '<i class="fas fa-angle-left"></i>',
+        next_text: '<i class="fas fa-angle-right"></i>',
+        mid_size: 1
+    }
+#pagination
+    if(!is_post())
+        .pagination
+            !=paginator(options)
+    else
+        if(page.prev)
+            .prev-post.pull-left
+                span(class="line line-top")
+                span(class="line line-right")
+                span(class="line line-bottom")
+                span(class="line line-left")
+                a(href=url_for(page.prev.path))
+                    i.fas.fa-angle-left &nbsp;
+                    span=page.prev.title
+        if(page.next)
+            .next-post.pull-right
+                span(class="line line-top")
+                span(class="line line-right")
+                span(class="line line-bottom")
+                span(class="line line-left")
+                a(href=url_for(page.next.path))
+                    span=page.next.title
+                    span &nbsp;
+                    i.fas.fa-angle-right

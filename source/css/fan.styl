@@ -1,0 +1,57 @@
+@import "./const.styl"
+
+@import "_global/*"
+
+@media screen and (min-width: 1200px) {
+  @import "highlight/highlight.styl"
+
+  @import "_layout/*"
+
+  @import "_search/*"
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  @import "highlight/highlight.styl"
+
+  @import "_layout/*"
+
+  // 内容
+  #content-outer {
+    #content-inner {
+      width 90%
+    }
+  }
+
+  @import "_search/*"
+}
+
+@media screen and (max-width: 899px) {
+  @import "min_screen_highlight/highlight.styl"
+
+  @import "min_screen_layout/*"
+
+  @import "min_screen_search/*"
+}
+
+/*@media screen and (max-width: 499px) {
+  @import "min_screen_layout!*"
+
+  #main-container {
+    width 500px
+  }
+
+  #content-outer {
+    width 500px
+    height calc(100% - 98px)
+    overflow auto
+
+    #content-inner {
+      margin 32px auto
+      width 484px
+    }
+  }
+}*/
+
+
+// 第三方样式
+@import "thirdparty/*"

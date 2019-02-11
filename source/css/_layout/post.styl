@@ -1,0 +1,221 @@
+@import "../highlight/theme.styl"
+
+#post, .post-content
+  margin-bottom 16px
+  padding 16px
+  background $rgba-color
+  border-radius 4px
+
+  .post-header
+    .title
+      // line-height 64px
+      font-size 26px
+      color $color-white
+      position relative
+      margin 0 0 16px 0
+      padding 8px 0
+      display block
+      transition $transition-delay
+
+      &:after
+        content url("../../images/ufo.svg")
+        position absolute
+        left 0
+        bottom -12px
+        width 12px
+        height 12px
+        font-size 12px
+        font-weight bolder
+
+      &:hover
+        color $color-theme
+        transition $transition-delay
+
+        &:after
+          animation rotate3ding 5s infinite
+
+    .container
+      display flex
+      flex-direction row
+      justify-content left
+      flex-wrap wrap
+      margin 0 0 16px 0
+
+      .article-icon
+        margin 0 8px 0 0
+
+      .link-a
+        transition $transition-delay
+
+        &:hover
+          transition $transition-delay
+          color $color-theme
+
+      .post-date, .categories, .tags
+        display block
+        margin-top 8px
+        padding 8px 16px
+        font-size 14px
+
+      .post-date
+        margin-right 8px
+
+      .categories
+        margin-right 8px
+
+      .tags
+        margin-right 0
+
+  .main-content
+    line-height 28px
+
+    img
+      max-width 100%
+
+    a
+      color $blockquote-padding-color
+
+      &:hover
+        color $color-theme
+
+    table
+      margin 8px 0 16px 0
+      max-width 100%
+
+      thead
+        tr
+          th
+            padding 8px 16px
+            border 1px solid $color-font
+            background $rgba-color
+            white-space nowrap
+
+      tbody
+        tr
+          td
+            padding 8px 16px
+            border 1px solid $color-font
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+      position relative
+      cursor pointer
+      transition $transition-delay
+      padding-left 16px
+      color #fff3cd
+
+      &:before
+        position absolute
+        top 50%
+        left 0
+        transform translateY(-50%)
+        color $blockquote-padding-color
+        content "\f0c1"
+        font normal normal normal 12px / 1 FontAwesome
+        font-size 12px
+        transition $transition-delay
+
+      &:hover
+        padding-left 24px
+
+        &:before
+          color $color-theme
+
+    ol,
+    ul
+      margin-top 8px
+      padding 0 0 0 16px
+      list-style none
+      counter-reset li
+
+      p
+        margin 0
+
+      ol,
+      ul
+        padding-left 8px
+
+      li
+        position relative
+        margin 4px 0
+        padding 2px 10px 2px 30px
+
+        &:hover
+          &:before
+            transform rotate(360deg)
+            color $color-theme
+
+        &:before
+          position absolute
+          top 0
+          left 0
+          background $rgba-color
+          color $blockquote-padding-color
+          cursor pointer
+          transition $transition-delay
+
+    ol
+      li
+        &:before
+          margin-top 4px
+          width w = 24px
+          height h = w
+          border-radius 0.5 * w
+          content counter(li)
+          counter-increment li
+          text-align center
+          font-size 12px
+          font-weight 600
+          line-height h
+
+    ul
+      li
+        &:hover
+          &:before
+            border-color $color-theme
+
+        &:before
+          $w = 6px
+          top 11px
+          margin-left 4px
+          width w = $w
+          height h = w
+          border 0.3 * w solid $blockquote-padding-color
+          //border-radius w
+          background transparent
+          content ""
+          line-height h
+          transform rotateZ(45deg)
+
+  .post-copyright
+    position relative
+    margin 40px 0 20px 0
+    padding 10px 16px
+    background $rgba-color
+    border-radius 4px
+    transition $transition-delay
+
+    &:hover
+      box-shadow 0 0 24px $box-shadow-color
+      transition $transition-delay
+
+    &-author, &-type, &-notice
+      margin 12px 0
+
+    &-meta
+      color $color-theme
+      font-weight bold
+
+    &-info
+      a
+        color $color-sub-theme
+        word-break break-word
+        transition $transition-delay
+
+        &:hover
+          color $color-theme
+          transition $transition-delay

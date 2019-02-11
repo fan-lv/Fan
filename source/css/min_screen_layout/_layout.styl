@@ -1,0 +1,45 @@
+// 背景canvas
+#universe
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 100%
+  background: radial-gradient(16rem at 70% 120%, rgba(33, 39, 80, 1) 10%, #020409 100%);
+  z-index -1
+
+//#body
+//  display flex
+//  flex-direction row
+//  height 100%
+#main-container
+  //flex 1 1 auto
+  height 100%
+
+// 内容
+#content-outer
+  height calc(100% - .98rem)
+  overflow auto
+  #content-inner
+    margin .32rem auto
+    width 90vw
+
+// 页脚
+#bottom-outer
+  #bottom-inner
+    color $color-font
+
+// 返回顶部
+#return-top
+  opacity 0
+  position fixed
+  bottom .72rem
+  right .32rem
+  width .4rem
+  height .4rem
+  line-height .4rem
+  text-align center
+  font-size .16rem
+  color $color-font
+  cursor pointer
+  z-index 9

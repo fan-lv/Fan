@@ -1,0 +1,75 @@
+.article-sort-item
+  margin .16rem 0
+  position relative
+  padding 0 .40rem
+  height .32rem
+  line-height .32rem
+  font-size .16rem
+  color $color-white
+  .article-time
+    margin-right .24rem
+    color #99a9bf
+  .article-link
+    transition $transition-delay
+    &:hover
+      color $color-theme
+      transition $transition-delay
+  &::before
+    content ''
+    display block
+    position absolute
+    left .06rem
+    top .09rem
+    width .06rem
+    height .06rem
+    border-radius 50%
+    border .04rem solid $color-sub-theme
+    transition $transition-delay
+  &::after
+    content ''
+    display block
+    position absolute
+    left .12rem
+    top .22rem
+    width .02rem
+    height .36rem
+    background $color-font
+  &:last-child
+    &::after
+      display none
+  &:hover
+    &::before
+      border-color $color-theme
+      transition $transition-delay
+  &.title
+    height .56rem
+    line-height .56rem
+    font-size .24rem
+    color $color-white
+    &::before
+      top .15rem
+      left 0
+      width .10rem
+      height .10rem
+      border-width .08rem
+    &::after
+      top .40rem
+      left .12rem
+      height .42rem
+  &.year
+    margin .16rem 0
+    height .40rem
+    line-height .40rem
+    font-size .20rem
+    font-weight 600
+    color $color-white
+    &::before
+      top .10rem
+      left .03rem
+      width .08rem
+      height .08rem
+      border-width .06rem
+    &::after
+      top .30rem
+      left .12rem
+      height .36rem

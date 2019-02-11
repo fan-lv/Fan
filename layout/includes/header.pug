@@ -1,0 +1,13 @@
+#menu-outer
+    i.menu-list-icon.fas.fa-bars
+    nav#menu-inner
+        each url, label in theme.menu
+            - var name = label.toLocaleLowerCase();
+            a(class="menu-item" href=url)= __('menu.' + name)
+    div(class="right-info")
+        if theme.algolia_search.enable
+            a(class="search social-icon")
+                i.fas.fa-search
+                span=' ' + __('menu.search')
+        a(class="title-name" href=config.root)= config.title
+        span(id="now-time")

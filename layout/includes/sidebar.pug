@@ -1,0 +1,41 @@
+#sidebar
+    - const showToc = is_post() && theme.toc.enable
+    -
+        let tocNumber
+        if (page.toc_number !== undefined) tocNumber = page.toc_number
+        else if (theme.toc.number !== undefined) tocNumber = theme.toc.number
+        else tocNumber = true
+    if(showToc)
+        .toggle-sidebar-info.button-hover
+            span(data-toggle= _p('sidebar.toc'))= _p('sidebar.overview')
+        .sidebar-toc
+            .sidebar-toc-title= _p('sidebar.catalog')
+            .sidebar-toc-progress
+                span.progress-notice= _p('sidebar.have_read')
+                span.progress-num 0
+                span.progress-percentage %
+                .sidebar-toc-progress-bar
+            #sidebar-toc-content.sidebar-toc-content!= toc(page.content, {list_number: tocNumber})
+    .author-info(class= showToc ? 'hide' : '')
+        .author-info-avatar
+            img.author-info-avatar-img(src=theme.avatar || url_for('/images/avatar.png'))
+        .author-info-name= config.author
+        .author-info-description= config.description
+        if theme.links && theme.links.enable && theme.links.data.length>0
+            .links-buttons
+                each item in theme.links.data
+                    a.links-button.button-hover(href=item.url target="_blank")= item.text
+                        i.icon-dot(class="bg-color" + Math.round(Math.random()*10))
+        .author-info-articles
+            if site.posts.length
+                a(href=url_for(config.archive_dir)).author-info-articles-archives.article-meta
+                    span.pull-top= _p('state.posts')
+                    span.pull-bottom= site.posts.length
+            if site.tags.length
+                a(href=url_for(config.tag_dir)).author-info-articles-tags.article-meta
+                    span.pull-top= _p('state.tags')
+                    span.pull-bottom= site.tags.length
+            if site.categories.length
+                a(href=url_for(config.category_dir)).author-info-articles-categories.article-meta
+                    span.pull-top= _p('state.categories')
+                    span.pull-bottom= site.categories.length

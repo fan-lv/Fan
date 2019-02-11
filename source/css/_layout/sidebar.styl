@@ -1,0 +1,156 @@
+#sidebar
+  position fixed
+  left -300px
+  width 300px
+  height 100%
+  overflow hidden
+  background $rgba-color
+  .toggle-sidebar-info
+    margin 16px auto 0
+    width 100px
+    height 32px
+    line-height 32px
+    font-size 14px
+    text-align center
+    span
+      display block
+      width 100px
+      height 32px
+  .sidebar-toc
+    position absolute
+    left 0
+    top 48px
+    padding 0 16px
+    width 268px
+    height calc(100% - 48px)
+    .sidebar-toc-title
+      margin-top 24px
+      font-size 20px
+      text-align center
+      color $color-white
+    .sidebar-toc-progress
+      margin-top 24px
+      font-size 16px
+      .progress-notice
+        margin-right 8px
+      .progress-num
+        margin-right 8px
+        font-weight 600
+        color $color-theme
+      .progress-percentage
+        font-size 16px
+      .sidebar-toc-progress-bar
+        margin-top 8px
+        height 1px
+        width 0
+        background $color-theme
+    .sidebar-toc-content
+      margin-top 24px
+      height calc(100% - 140px)
+      .toc
+        font-size 14px
+        .toc-item
+          line-height 28px
+          .toc-link
+            transition $transition-delay
+            &:hover
+              color $color-theme
+              transition $transition-delay
+            &.active
+              color $color-theme
+        .toc-child
+          padding-left 12px
+          display none
+  .author-info
+    display flex
+    flex-direction column
+    align-items center
+    width 300px
+    &.hide
+      display none
+      opacity 0
+      position absolute
+      left 80px
+      top 48px
+    .author-info-avatar
+      margin-top 16px
+      border-radius 50%
+      overflow hidden
+      .author-info-avatar-img
+        padding 2px
+        width 120px
+        height 120px
+        border-radius 50%
+        border 2px solid $rgba-color
+        &:hover
+          animation avatar 5s linear infinite
+    .author-info-name
+      margin-top 16px
+      color $color-white
+    .author-info-description
+      margin-top 24px
+      font-size 14px
+    .links-buttons
+      margin-top 24px
+      padding 0 16px
+      display flex
+      flex-direction row
+      flex-wrap wrap
+      justify-content center
+      .links-button
+        position relative
+        margin-top 12px
+        margin-right 12px
+        padding 8px 16px 8px 22px
+        font-size 14px
+        background $rgba-color
+        .icon-dot
+          display block
+          position absolute
+          left 10px
+          top 12px
+          width 6px
+          height 6px
+          border-radius 50%
+  .author-info-articles
+    display flex
+    flex-direction row
+    margin-top 32px
+    font-size 14px
+    .article-meta
+      display flex
+      flex-direction column
+      align-items center
+      width 72px
+      transition $transition-delay
+      .pull-top
+        margin-top 8px
+      .pull-bottom
+        margin 8px 0
+      &:hover
+        color $color-theme
+        transition $transition-delay
+      &.author-info-articles-archives, &.author-info-articles-tags
+        position relative
+        &:after
+          content ''
+          position absolute
+          right 0
+          top 50%
+          transform translate3d(0, -50%, 0)
+          display block
+          width 1px
+          height 32px
+          background $rgba-color
+      &.author-info-articles-tags
+      &.author-info-articles-categories
+        font-size 14px
+
+@keyframes avatar {
+  25% {
+    transform rotateZ(30deg)
+  }
+  75% {
+    transform rotateZ(-30deg)
+  }
+}

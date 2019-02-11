@@ -1,0 +1,186 @@
+@import "../highlight/theme.styl"
+
+#page
+  .tag-cloud
+    padding-top 32px
+    text-align center
+    .tag-cloud-title
+      display inline-block
+      font-size 30px
+    .tag-cloud-line
+      margin 0 16px
+      font-size 30px
+    .tag-cloud-amount
+      font-size 30px
+    .tag-cloud-tags
+      margin 32px 0 0 0
+      a
+        display inline-block
+        margin 16px 16px
+        &:hover
+          color $color-theme
+  .category-lists
+    padding-top 32px
+    text-align center
+    .category-title
+      display inline-block
+      font-size 30px
+    .category-line
+      margin 0 16px
+      font-size 30px
+    .category-amount
+      font-size 30px
+    .category-list
+      margin-top 40px
+      padding 0 0 8px
+      list-style none
+      counter-reset li
+      text-align left
+      .category-list-item
+        position relative
+        margin 20px 0
+        padding 10px 50px 10px 32px
+        font-size 14px
+        transition $transition-delay
+        &::before
+          content ""
+          display block
+          position absolute
+          top 8px
+          left 0
+          width 8px
+          height 8px
+          border 4px solid $color-sub-theme
+          background transparent
+          border-radius 50%
+          line-height 30px
+          transition $transition-delay
+        &:hover
+          &::before
+            border 4px solid $color-theme
+            transition $transition-delay
+          .category-list-link, .category-list-count
+            color $color-theme
+            transition $transition-delay
+        .category-list-link
+          color $color-font
+          text-decoration none
+          cursor pointer
+          transition $transition-delay
+        .category-list-count
+          margin-left 16px
+          color $color-font
+          transition $transition-delay
+          &::before
+            content '('
+          &::after
+            content ')'
+  .about
+    margin-bottom 16px
+    padding 16px
+    background $rgba-color
+    border-radius 4px
+    line-height 28px
+    img
+      max-width 100%
+    a
+      color $blockquote-padding-color
+      &:hover
+        color $color-theme
+    table
+      margin 8px 0 16px 0
+      max-width 100%
+      thead
+        tr
+          th
+            padding 8px 16px
+            border 1px solid $color-font
+            background $rgba-color
+            white-space nowrap
+      tbody
+        tr
+          td
+            padding 8px 16px
+            border 1px solid $color-font
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+      position relative
+      cursor pointer
+      transition $transition-delay
+      padding-left 16px
+      color #fff3cd
+      &:before
+        position absolute
+        top 50%
+        left 0
+        transform translateY(-50%)
+        color $blockquote-padding-color
+        content "\f0c1"
+        font normal normal normal 12px / 1 FontAwesome
+        font-size 12px
+        transition $transition-delay
+      &:hover
+        padding-left 24px
+        &:before
+          color $color-theme
+    ol,
+    ul
+      margin-top 8px
+      padding 0 0 0 16px
+      list-style none
+      counter-reset li
+      p
+        margin 0
+      ol,
+      ul
+        padding-left 8px
+      li
+        position relative
+        margin 4px 0
+        padding 2px 10px 2px 30px
+        &:hover
+          &:before
+            transform rotate(360deg)
+            color $color-theme
+        &:before
+          position absolute
+          top 0
+          left 0
+          background $rgba-color
+          color $blockquote-padding-color
+          cursor pointer
+          transition $transition-delay
+    ol
+      li
+        &:before
+          margin-top 4px
+          width w = 24px
+          height h = w
+          border-radius 0.5 * w
+          content counter(li)
+          counter-increment li
+          text-align center
+          font-size 12px
+          font-weight 600
+          line-height h
+    ul
+      li
+        &:hover
+          &:before
+            border-color $color-theme
+        &:before
+          $w = 6px
+          top 11px
+          margin-left 4px
+          width w = $w
+          height h = w
+          border 0.3 * w solid $blockquote-padding-color
+          //border-radius w
+          background transparent
+          content ""
+          line-height h
+          transform rotateZ(45deg)

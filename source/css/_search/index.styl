@@ -1,0 +1,48 @@
+.search-dialog
+  position fixed
+  top 40%
+  left 50%
+  z-index 1001
+  display none
+  transform translate(-50%, -50%)
+  padding 20px
+  width 600px
+  background rgba(0, 0, 0, 0.9)
+  box-shadow 0 0 32px rgba(255, 255, 255, 0.2)
+  border-radius 4px
+
+  #algolia-search-title
+    padding 0 0 14px 0
+    color $color-theme
+    font-size 20px
+
+  .search-close-button
+    position absolute
+    top 10px
+    right 10px
+    color $color-white
+    cursor pointer
+    transition $transition-delay
+    &:hover
+      color $color-theme
+      transition $transition-delay
+
+  hr
+    display block
+    height 0
+    border 0
+
+.search-mask
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+  z-index 1000
+  display none
+  background rgba(255, 255, 255, 0.2)
+
+//@media screen and (max-width: $sm)
+//  .search-dialog
+//    margin-left: -45%
+//    width: 90%

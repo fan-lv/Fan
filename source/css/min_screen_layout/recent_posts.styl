@@ -1,0 +1,73 @@
+#recent-posts
+  .recent-post-item
+    display flex
+    flex-direction column
+    margin .32rem 0
+    padding .16rem
+    background $rgba-color
+    border-radius .04rem
+    transition $transition-delay
+    &:hover
+      box-shadow 0 0 .24rem $box-shadow-color
+      transition $transition-delay
+    .post-title
+      position relative
+      margin 0 0 .16rem 0
+      padding .08rem 0
+      display block
+      font-size .24rem
+      transition $transition-delay
+      &:after
+        content url("../../images/ufo.svg")
+        position absolute
+        left 0
+        bottom -.12rem
+        width .12rem
+        height .12rem
+        font-size .12rem
+        font-weight bolder
+      &:hover
+        color $color-theme
+        transition $transition-delay
+        &:after
+          animation rotate3ding 5s infinite
+    .container
+      display flex
+      flex-direction row
+      justify-content left
+      flex-wrap wrap
+      margin-top .16rem
+      .article-icon
+        margin 0 .08rem 0 0
+      .link-a
+        transition $transition-delay
+        &:hover
+          transition $transition-delay
+          color $color-theme
+      .post-date, .categories, .tags
+        display block
+        margin-top .08rem
+        padding .08rem .16rem
+        font-size .14rem
+      .post-date
+        margin-right .08rem
+      .categories
+        margin-right .08rem
+      .tags
+        margin-right 0
+    .post-content
+      margin-bottom 0
+      padding 0
+      background transparent
+      border-radius 0
+    .content
+      margin-top .32rem
+      display block
+      line-height .28rem
+    .more
+      margin .32rem 0 .16rem 0
+      padding .08rem 0
+      display inline-block
+      width 1rem
+      text-align center
+      font-size .12rem
