@@ -8,9 +8,11 @@ block content
                 time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.posted')] #[=date(page['date'], config.date_format)] | #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
                 //time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]
                 .button-hover.categories
-                    each categories in page.categories.data
+                    each categories,index in page.categories.data
                         i.fa.fa-inbox.article-icon(aria-hidden="true")
                         a.link-a(href=url_for(categories.path)) #[=categories.name]
+                        if(index < page.categories.data.length - 1)
+                            i.fa.fa-angle-right(style="margin: 0 8px;")
                 .button-hover.tags
                     each tags,index in page.tags.data
                         i.fa.fa-tag.article-icon(aria-hidden="true")

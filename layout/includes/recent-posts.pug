@@ -13,9 +13,11 @@ if page.posts.length > 0
                         time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=date_text] #[=date(post[date_type], config.date_format)]
                     if (theme.post_meta.categories && post.categories.data.length > 0)
                         .button-hover.categories
-                            each categories in post.categories.data
+                            each categories,index in post.categories.data
                                 i.fa.fa-inbox.article-icon(aria-hidden="true")
                                 a.link-a(href=url_for(categories.path)) #[=categories.name]
+                                if(index < post.categories.data.length - 1)
+                                    i.fa.fa-angle-right(style="margin: 0 8px;")
                     if (theme.post_meta.tags && post.tags.data.length > 0)
                         .button-hover.tags
                             each tags,index in post.tags.data
