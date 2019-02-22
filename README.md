@@ -17,3 +17,8 @@ git clone https://github.com/fan-lv/Fan.git themes/Fan
 cd themes/Fan
 git pull
 ```
+
+## 需要的依赖包
+
+- hexo-renderer-jade
+- hexo-renderer-stylus
