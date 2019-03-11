@@ -9,11 +9,6 @@ menu:
   Categories: /categories
   Archives: /archives
   About: /about
-#menu:
-#  Home: /
-#  About: /about
-#  Contact: /contact
-#  Archives: /archives
 
 # Miscelaneous
 favicon: /favicon.ico
@@ -84,8 +79,9 @@ post_meta:
   tags: true
 
 # recent-posts 中文章内容显示的字数
+# 不推荐使用，请尽量在文章中使用 <!-- more --> 来定位要截断的内容
 auto_excerpt:
-  enable: true
+  enable: false
   length: 200
 
 # algolia 搜索

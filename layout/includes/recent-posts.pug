@@ -26,11 +26,7 @@ if page.posts.length > 0
                                 if(index < post.tags.data.length - 1)
                                     span &nbsp;|&nbsp;
                 .post-content
-                    if (post.layout === 'slides')
-                        .main-content.content
-                            - var iframeLink = post.iframe || link
-                            iframe(src=url_for(iframeLink) frameborder="0")
-                    else if(post.excerpt)
+                    if(post.excerpt)
                         .main-content.content!= post.excerpt
                     else if theme.auto_excerpt && theme.auto_excerpt.enable
                         - const content = strip_html(post.content)
