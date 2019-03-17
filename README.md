@@ -25,3 +25,7 @@ git pull
 
 ## 问题
 - 如果报错 appId undefined,需要把 themes->_config.yml 中 algolia_search:enable 改成 false
+
+## License
+[MIT](https://opensource.org/licenses/MIT)
+
