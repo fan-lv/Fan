@@ -3,10 +3,12 @@
         i.fas.fa-arrow-right
     .right-content
         if theme.busuanzi.enable
-            include ./count/busuanzi
+            include ./count/busuanzi.pug
         - var now = new Date()
         - var nowYear = now.getFullYear()
         if theme.since && theme.since != nowYear
-            .copyright!= `&copy;${theme.since} ～ ${nowYear} By ${config.author}`
+            - let copyrightSince = `&copy;${theme.since} ～ ${nowYear} By ${config.author}`
+            .copyright!= copyrightSince
         else
-            .copyright!= `&copy;${nowYear} By ${config.author}`
+            - let copyright = `&copy;${nowYear} By ${config.author}`
+            .copyright!= copyright

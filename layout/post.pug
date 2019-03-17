@@ -1,4 +1,4 @@
-extends includes/layout
+extends includes/layout.pug
 
 block content
     article#post
@@ -25,7 +25,8 @@ block content
                 .post-copyright-author
                     span.post-copyright-meta= _p('post.copyright.author') + ": "
                     span.post-copyright-info
-                        a(href=`mailto:${config.email}`) #[=config.author]
+                        - let mailto = `mailto:${config.email}`
+                        a(href=mailto) #[=config.author]
                 .post-copyright-type
                     span.post-copyright-meta= _p('post.copyright.link') + ": "
                     span.post-copyright-info
@@ -33,5 +34,5 @@ block content
                 .post-copyright-notice
                     span.post-copyright-meta= _p('post.copyright.copyright_notice') + ": "
                     span.post-copyright-info!= _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
-    include includes/pagination
+    include includes/pagination.pug
     //div!= paginator()

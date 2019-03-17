@@ -1,4 +1,4 @@
-extends includes/layout
+extends includes/layout.pug
 
 block content
     article#page
@@ -19,5 +19,5 @@ block content
             article.page
                 h1= _p('menu.' + page.title)
                 .about!= page.content
-            include includes/pagination
+            include includes/pagination.pug
         //div!= paginator()

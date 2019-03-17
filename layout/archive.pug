@@ -1,4 +1,4 @@
-extends includes/layout
+extends includes/layout.pug
 
 block content
     div#tag
@@ -18,7 +18,7 @@ block content
                     time.article-time(datetime=date_xml(article.date))= date(article.date)
                     a.article-link(href=url_for(article.path))= article.title || 'No Title'
         - })
-    include includes/pagination
+    include includes/pagination.pug
     // - var categoriesList = list_categories({ show_count: false })
     // - var tagsList = list_tags({ show_count: false })
     // - var archivesList = list_archives({ show_count: false })
@@ -70,6 +70,6 @@ block content
     //                 a(href=url_for(article.path))= article.title || 'No Title'
     //             time(datetime=date_xml(article.date))= date(article.date)
     //         - })
-    //         include includes/pagination
+    //         include includes/pagination.pug
             //div!= paginator()
 

@@ -1,4 +1,4 @@
-extends includes/layout
+extends includes/layout.pug
 
 block content
 
@@ -30,6 +30,6 @@ block content
     //            a(href=url_for(article.path))= article.title || 'No Title'
     //        time(datetime=date_xml(article.date))= date(article.date)
     //    - })
-    include includes/pagination
+    include includes/pagination.pug
     //div!= paginator()
 
