@@ -27,8 +27,8 @@ html(lang=config.language)
         if theme.stylesheets !== undefined && theme.stylesheets.length > 0
             //- stylesheets list from config.yml
             each url in theme.stylesheets
-                link(rel='stylesheet', href=url)
-        link(rel="icon", href=theme.favicon)
+                link(rel='stylesheet', href=url_for(url))
+        link(rel="icon", href=url_for(theme.favicon))
         include ./head.pug
         include ./config.pug
     body
