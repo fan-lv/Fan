@@ -3,9 +3,16 @@ if theme.algolia_search.enable
     link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css")
     script(src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4")
 
-    //link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")
-    //link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css")
-    //script(src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer)
+    // link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")
+    // link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css")
+    // script(src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer)
+
+// script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
+script(src=url_for("/js/mathjax/mathjax.js"))
+script(type="text/x-mathjax-config").
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
 
 script.
     var isPassword = '!{page.password}' || false;
