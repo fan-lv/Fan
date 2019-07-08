@@ -1,5 +1,6 @@
 #recent-posts
   .recent-post-item
+    position relative
     display flex
     flex-direction column
     margin 32px 0
@@ -10,6 +11,13 @@
     &:hover
       box-shadow 0 0 24px $box-shadow-color
       transition $transition-delay
+    .article-top
+      position absolute
+      right 0
+      top 0
+      width 48px
+      height 48px
+      background url("../../images/top.svg") top right / 48px 48px no-repeat
     .post-title
       position relative
       margin 0 0 16px 0

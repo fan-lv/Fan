@@ -26,6 +26,9 @@ git pull
 ## 问题
 - 如果报错 appId undefined,需要把 themes->_config.yml 中 algolia_search:enable 改成 false
 
+## 说明
+- 支持文章置顶功能，在需要置顶的文章加入 top: 1，数值越大越靠前。
+
 ## License
 [MIT](https://opensource.org/licenses/MIT)
 
