@@ -39,3 +39,8 @@
                 a(href=url_for(config.category_dir)).author-info-articles-categories.article-meta
                     span.pull-top= _p('state.categories')
                     span.pull-bottom= site.categories.length
+        if theme.toc.friendlink.enable && theme.toc.friendlink.data.length>0
+            .friend-link
+                each item in theme.toc.friendlink.data
+                    a.friend-link-text(href=item.url target="_blank")= item.text
+
