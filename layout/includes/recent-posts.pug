@@ -1,5 +1,5 @@
 -
-    var posts = page.posts.toArray()
+    var posts = page.posts.data || []
     page.posts = posts.sort(function(a, b) {
         if(a.top && b.top) {
             if(a.top === b.top) return b.date - a.date;
