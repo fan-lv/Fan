@@ -1,4 +1,5 @@
 -
+    var orderBy = config.index_generator.order_by.replace('-','')
     var posts = page.posts.data || []
     page.posts = posts.sort(function(a, b) {
         if(a.top && b.top) {
@@ -11,7 +12,7 @@
         else if(!a.top && b.top) {
             return 1;
         }
-        else return b.date - a.date;
+        else return b[orderBy] - a[orderBy];
     });
 if page.posts.length > 0
     #recent-posts
