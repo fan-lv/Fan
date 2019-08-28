@@ -97,7 +97,7 @@ auto_excerpt:
 
 # algolia 搜索
 algolia_search:
-  enable: true
+  enable: false
   hits:
     per_page: 10
 
