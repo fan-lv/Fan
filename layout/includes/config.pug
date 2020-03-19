@@ -27,6 +27,15 @@
     })
   }
 
+  if(theme.comments.enable){
+    var gitment = JSON.stringify({
+      owner: config.comments.gitment.owner,
+      repo: config.comments.gitment.repo,
+      client_id: config.comments.gitment.client_id,
+      client_secret: config.comments.gitment.client_secret
+    })
+  }
+
 script.
   window.GLOBAL_CONFIG = {
     root: '!{config.root}',
@@ -36,5 +45,6 @@ script.
       success: '!{_p("copy.success")}',
       error: '!{_p("copy.error")}',
       noSupport: '!{_p("copy.noSupport")}'
-    }
+    },
+    gitment: !{gitment},
   }

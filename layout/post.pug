@@ -34,5 +34,7 @@ block content
                 .post-copyright-notice
                     span.post-copyright-meta= _p('post.copyright.copyright_notice') + ": "
                     span.post-copyright-info!= _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
+        if (config.comments.gitment.enable)
+            include ./includes/comments/index.pug
     include includes/pagination.pug
     //div!= paginator()

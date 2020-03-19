@@ -70,6 +70,7 @@ busuanzi:
 stylesheets:
 - /css/fan.css
 - /css/thirdparty/jquery.mCustomScrollbar.min.css
+- https://imsun.github.io/gitment/style/default.css
 
 # scripts loaded in the end of the body
 scripts:
@@ -110,3 +111,7 @@ post_copyright:
   enable: true
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# 评论
+comments:
+  enable: true

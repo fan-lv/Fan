@@ -1,0 +1,34 @@
+#comments-container.post-copyright
+    script(src=url_for('/js/comments/gitment.js'))
+script.
+    let arr = location.href.split('/#more')[0].split('/');
+    let title = arr[arr.length - 1];
+    if (title === '') {
+        title = arr[arr.length - 2]
+    }
+    var flag = false;
+    var gitFun = function () {
+        try {
+            var gitmentObj = window.GLOBAL_CONFIG.gitment;
+            var gitment = new Gitment({
+                id: decodeURI(title), // 可选。默认为 location.href
+                owner: gitmentObj.owner,
+                repo: gitmentObj.repo,
+                oauth: {
+                    client_id: gitmentObj.client_id,
+                    client_secret: gitmentObj.client_secret
+                },
+            });
+            gitment.render('comments-container');
+            flag = true;
+        } catch (e) {
+            flag = false;
+        }
+    }
+    var setIn = setInterval(() => {
+        if (!flag) {
+            gitFun();
+        } else {
+            clearInterval(setIn);
+        }
+    }, 200);
