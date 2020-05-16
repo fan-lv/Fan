@@ -3,6 +3,7 @@
 
 
 [Preview](https://www.lvfan.xyz/)   
+![demo](https://lvfan.xyz/blog.png)
 
 ## 安装
 
