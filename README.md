@@ -4,7 +4,7 @@
 
 [Preview](https://www.lvfan.xyz/)   
 
-![blog_demo](https://lvfan.xyz/blog_demo.png)
+<img width='999' src='https://lvfan.xyz/blog_demo.png' alt='主题预览图'>
 
 ## 安装
 
