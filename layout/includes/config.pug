@@ -28,12 +28,26 @@
   }
 
   if(theme.comments.enable){
-    var gitment = JSON.stringify({
-      owner: config.comments.gitment.owner,
-      repo: config.comments.gitment.repo,
-      client_id: config.comments.gitment.client_id,
-      client_secret: config.comments.gitment.client_secret
-    })
+    var gitment = JSON.stringify({});
+    var valine = JSON.stringify({});
+
+    switch(theme.comments.type){
+      case "gitment":
+        gitment = JSON.stringify({
+          owner: config.comments.gitment.owner,
+          repo: config.comments.gitment.repo,
+          client_id: config.comments.gitment.client_id,
+          client_secret: config.comments.gitment.client_secret
+        });
+        break;
+      case "valine":
+        var obj={};
+        for(var key in config.comments.valine){
+          obj[key] = config.comments.valine[key];
+        }
+        valine = JSON.stringify(obj);
+        break;
+    }
   }
 
 script.
@@ -47,4 +61,5 @@ script.
       noSupport: '!{_p("copy.noSupport")}'
     },
     gitment: !{gitment},
+    valine: !{valine},
   }

@@ -1,2 +1,5 @@
 if (theme.comments.enable)
-    include ./gitment.pug
+    if (theme.comments.type === 'gitment')
+        include ./gitment.pug
+    else if (theme.comments.type === 'valine')
+        include ./valine.pug

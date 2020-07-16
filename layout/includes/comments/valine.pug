@@ -1,0 +1,28 @@
+#comments-container.post-copyright.valine
+    script(src=url_for('//unpkg.com/valine@1.4.14/dist/Valine.min.js'))
+    script.
+        let arr = location.href.split('/#more')[0].split('/');
+        let title = arr[arr.length - 1];
+        if (title === '') {
+            title = arr[arr.length - 2];
+        }
+        var flag = false;
+        var gitFun = function () {
+            try {
+                var valineObj = window.GLOBAL_CONFIG.valine;
+                new Valine({
+                    el: "#comments-container",
+                    ...valineObj
+                });
+                flag = true;
+            } catch (e) {
+                flag = false;
+            }
+        }
+        var setIn = setInterval(() => {
+            if (!flag) {
+                gitFun();
+            } else {
+                clearInterval(setIn);
+            }
+        }, 200);

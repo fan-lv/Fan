@@ -1,39 +1,42 @@
 #comments-container
+    // gitment 评论样式
     background rgba(255, 255, 255, 0.6) !important
-
     .gitment-root-container
         margin 0
-
         .gitment-header-container
             margin 0 0 19px 0
-
         .gitment-footer-container
             margin-bottom 0
-
     .gitment-comment-header
         padding 4px 8px
         background-color $rgba-color
-
     .gitment-editor-main::before, .gitment-comment-main::before
         border-right-color $rgba-color
-
     .gitment-editor-main::after, .gitment-comment-main::after
         border-right-color $rgba-color
-
     .gitment-comment-main, .gitment-editor-main
         border 1px solid rgba(255, 255, 255, 0.5)
         border-radius 4px
-
     .gitment-editor-header
         border-bottom 1px solid $rgba-color
-
     .gitment-editor-tab.gitment-selected
         background-color transparent
         border-color transparent
         border-bottom 2px solid $color-theme
-
     .gitment-editor-body textarea
         background-color transparent
-
         &:focus
             background-color transparent
+
+    // valine 评论样式
+    &.valine
+        background rgba(255, 255, 255, 0) !important
+    &.v[data-class=v]
+        .vinput, p, .vbtn, .vempty
+            color #fff
+        .vbtn:hover
+            color #3090e4
+        .vicon
+            fill: #fff
+            &.actived
+                fill: #66b1ff
