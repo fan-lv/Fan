@@ -28,6 +28,8 @@ git pull
 npm install --save hexo-renderer-jade hexo-renderer-stylus
 ```
 
+> Notes: 有说 `hexo-renderer-jade` 包过期的，可以用 `hexo-renderer-pug`
+
 其他扩展依赖包参考
 ```
 npm install --save hexo-generator-feed hexo-generator-sitemap hexo-generator-archive hexo-browsersync
@@ -66,7 +68,7 @@ top: 1
         repo: 'The repository to store your comments. Make sure you're repo's owner'
         client_id: 'GitHub client ID'
         client_secret: 'GitHub client secret'
-        
+ 
       # 可以自由配置 valine 的其他配置项
       valine:
         appId: 'Your appId'
