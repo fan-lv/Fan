@@ -22,13 +22,19 @@ git pull
 - hexo-renderer-stylus
 
 若报错 `extends includes/layout.pug block content include includes/recent-posts.pug include includes/pagination.pug`
-安装依赖包
+
+安装依赖包，重新生成
 ```
 npm install --save hexo-renderer-jade hexo-renderer-stylus
 ```
 
-## Question
-- 若报错 `appId` `undefined`，需要把 `themes` -> `_config.yml` 中 `algolia_search:enable` 改成 `false`
+其他扩展依赖包参考
+```
+npm install --save hexo-generator-feed hexo-generator-sitemap hexo-generator-archive hexo-browsersync
+```
+
+## Questions
+- 若报错 `layout\includes\config.pug:1`, `Cannot read property 'appId' of undefined`, 需要把 `themes` -> `_config.yml` 中 `algolia_search:enable` 改成 `false`
 
 ## Expansion
 ### Top article
@@ -51,7 +57,7 @@ top: 1
 目前支持 [Gitment](https://github.com/imsun/gitment)、[Valine](https://valine.js.org/) 评论。
 
 使用方法：
-1. 在根目录下 `_config.yml` 文件中加入以下代码，`'gitment'，'valine'` 配置自行选择一个，第二步中选择使用哪个
+1. 在根目录下 `_config.yml` 文件中加入以下代码，`["gitment", "valine"]` 配置自行选择一个，第二步中选择使用哪个
     ```
     comments:
       gitment:
