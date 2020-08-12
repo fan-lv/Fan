@@ -38,7 +38,7 @@ npm install --save hexo-generator-feed hexo-generator-sitemap hexo-generator-arc
 ## Questions
 - 若报错 `layout\includes\config.pug:1`, `Cannot read property 'appId' of undefined`, 需要把 `themes` -> `_config.yml` 中 `algolia_search:enable` 改成 `false`
 
-## Expansion
+## Feature
 ### Top article
 
 支持文章置顶功能，在需要置顶的文章（Markdown 文件）加入 `top: 1`，数值越大越靠前。
