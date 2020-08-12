@@ -86,6 +86,47 @@ top: 1
         type: "valine"
     ```
 
+### Algolia_search
+
+1. 注册 [Algolia账户]](https://www.algolia.com/users/sign_in)，创建新的 Index，记下 `index name`
+
+2. 安装扩展
+
+```
+npm install hexo-algolia --save
+```
+
+3. 修改 Algolia 搜索 ACL（访问控制列表）
+
+> Note: 默认的 `Search-Only API Key` 不能修改，需要在 `All API Keys` -> `New API Key`
+
+接着修改 `ACLs`: `search` `addObject` `deleteObject` `listIndexes` `deletelndex`
+
+```
+export HEXO_ALGOLIA_INDEXING_KEY=New API Key
+hexo algolia
+```
+
+> Notes: Mac 和 git bash 为 `export`, Windows 为 `set`, Powershell 用 `$env`
+ 
+4. 获取 Key，更新站点根目录配置
+
+```
+algolia:
+  applicationID: 'Application ID'
+  apiKey: 'New API Key'
+  indexName: 'index name'
+```
+
+5. 主题配置下开启 Algolia_search
+
+```
+algolia_search:
+  enable: true
+  hits:
+    per_page: 10
+```
+
 <img width='999' src='https://lvfan.xyz/blog_demo.png' alt='主题预览图'>
 
 ## License
