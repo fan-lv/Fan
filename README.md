@@ -122,7 +122,7 @@ top: 1
       hits:
         per_page: 10
     ```
-> 注意，每次更新文章后记得执行 `hexo algolia` 更新索引。
+    > 注意，每次更新文章后记得执行 `hexo algolia` 更新索引。
 
 <img width='999' src='https://lvfan.xyz/blog_demo.png' alt='主题预览图'>
 
