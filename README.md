@@ -1,6 +1,6 @@
 <h1 align="center">Fan</h1>
 <p align="center">这是一个深色主题，如梦幻般的星空，群星闪烁。</p>
-<p align="center"><a href="https://www.lvfan.xyz/"><b>Preview</b></a></p>
+<p align="center"><a href="https://lv-fan.gitee.io/"><b>Preview</b></a></p>
 
 ## Install
 
