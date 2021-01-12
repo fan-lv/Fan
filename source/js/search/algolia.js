@@ -45,7 +45,7 @@
         indexName: algolia.indexName,
         routing: true,
         searchParameters: {
-            hitsPerPage: algolia.hits.per_page || 10
+            hitsPerPage: algolia.per_page || 10
         }
         // searchFunction: function (helper) {
         //     var searchInput = $('#search-box').find('input');
