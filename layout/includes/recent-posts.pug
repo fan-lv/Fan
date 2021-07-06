@@ -1,9 +1,10 @@
 -
     var orderBy = config.index_generator.order_by.replace('-','')
-    var posts = page.posts.data || []
-    page.posts = posts.sort(function(a, b) {
+    //- var posts = page.posts.data || []
+    var posts = site.posts.data || []
+    var posts_sort = posts.sort(function(a, b) {
         if(a.top && b.top) {
-            if(a.top === b.top) return b.date - a.date;
+            if(a.top === b.top) return b[orderBy] - a[orderBy];
             else return b.top - a.top;
         }
         else if(a.top && !b.top) {
@@ -14,6 +15,11 @@
         }
         else return b[orderBy] - a[orderBy];
     });
+    if(posts_sort.length>config.index_generator.per_page && page.current === 1) {
+        page.posts = posts_sort.slice(0, config.index_generator.per_page)
+    } else {
+        page.posts = posts_sort.slice((page.current-1) * config.index_generator.per_page, page.current * config.index_generator.per_page)
+    }
 if page.posts.length > 0
     #recent-posts
         // each post in page.posts.sort('date', -1).limit(10).toArray()
