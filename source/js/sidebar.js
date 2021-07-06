@@ -103,5 +103,12 @@
         //     });
         // }
     });
-
+    /** 
+     * @description 为toc-link添加URI解码，适配Hexo 5.0.0+
+     */
+    var list = document.getElementsByClassName('toc-link');
+    for (var i in list) {
+        var tochref = decodeURI(list[i].getAttribute('href'));
+        list[i].href = tochref;
+    }
 }());
