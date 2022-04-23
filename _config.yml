@@ -18,16 +18,12 @@ avatar: /avatar.png
 # 侧边栏
 # friendlink：友链，设置为 true 的同时在 data 中加入链接和描述
 toc:
-  enable: false
+  enable: true
   friendlink:
     enable: false
     data:
-      - url: https://github.com/fan-lv
-        text: 友链1:这是简介
-      - url: https://github.com/fan-lv
-        text: 友链2
-      - url: https://github.com/fan-lv
-        text: 友链3
+      - url: https://github.com/GCS-ZHN
+        text: GitHub
 
 # Footer Settings
 # ---------------
@@ -36,12 +32,10 @@ since: 2017
 links:
   enable: true
   data:
-    - url: https://github.com/fan-lv
+    - url: https://github.com/GCS-ZHN
       text: GitHub
-    - url: mailto:15757856604@163.com
+    - url: mailto:zhang.h.n@foxmail.com
       text: E-Mail
-    - url: tencent://message/?uin=1019593584&Site=&Menu=yes
-      text: QQ
 
 # busuanzi count for PV / UV in site
 busuanzi:
