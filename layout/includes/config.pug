@@ -26,11 +26,10 @@
       }
     })
   }
-
+  
+  var gitment = JSON.stringify({});
+  var valine = JSON.stringify({});
   if(theme.comments.enable){
-    var gitment = JSON.stringify({});
-    var valine = JSON.stringify({});
-
     switch(theme.comments.type){
       case "gitment":
         gitment = JSON.stringify({
