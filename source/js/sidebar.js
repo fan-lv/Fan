@@ -108,7 +108,9 @@
      */
     var list = document.getElementsByClassName('toc-link');
     for (var i in list) {
-        var tochref = decodeURI(list[i].getAttribute('href'));
-        list[i].href = tochref;
+        if (list.hasOwnProperty(i)) {
+            var tochref = decodeURI(list[i].getAttribute('href'));
+            list[i].href = tochref;
+        }
     }
 }());
