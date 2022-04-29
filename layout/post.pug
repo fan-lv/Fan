@@ -30,7 +30,7 @@ block content
                 .post-copyright-type
                     span.post-copyright-meta= _p('post.copyright.link') + ": "
                     span.post-copyright-info
-                        a(href=url_for(page.permalink)) #[=page.permalink]
+                        a(href=url_for(page.permalink)) #[=decodeURI(page.permalink)]
                 .post-copyright-notice
                     span.post-copyright-meta= _p('post.copyright.copyright_notice') + ": "
                     span.post-copyright-info!= _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
