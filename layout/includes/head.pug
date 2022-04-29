@@ -15,9 +15,9 @@ script(type="text/x-mathjax-config").
     });
 
 script.
-    var isPassword = '!{page.password}' || false;
+    var isPassword = '!{page.passwordFan}' || false;
     if (isPassword) {
-        if (prompt('请输入文章密码') !== '!{page.password}') {
+        if (prompt('请输入文章密码') !== '!{page.passwordFan}') {
             alert('密码错误！');
             history.back();
         }
