@@ -124,7 +124,7 @@ top: 1
     ```
     > 注意，每次更新文章后记得执行 `hexo algolia` 更新索引。
 
-<img width='999' src='https://lvfan.xyz/blog_demo.png' alt='主题预览图'>
+<img width='999' src='https://lv-fan.gitee.io/blog_demo.png' alt='主题预览图'>
 
 ## License
 [MIT](https://opensource.org/licenses/MIT)
