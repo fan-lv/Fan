@@ -34,16 +34,16 @@
     switch(theme.comments.type){
       case "gitment":
         gitment = JSON.stringify({
-          owner: config.comments.gitment.owner,
-          repo: config.comments.gitment.repo,
-          client_id: config.comments.gitment.client_id,
-          client_secret: config.comments.gitment.client_secret
+          owner: theme.comments.gitment.owner,
+          repo: theme.comments.gitment.repo,
+          client_id: theme.comments.gitment.client_id,
+          client_secret: theme.comments.gitment.client_secret
         });
         break;
       case "valine":
         var obj={};
-        for(var key in config.comments.valine){
-          obj[key] = config.comments.valine[key];
+        for(var key in theme.comments.valine){
+          obj[key] = theme.comments.valine[key];
         }
         valine = JSON.stringify(obj);
         break;
