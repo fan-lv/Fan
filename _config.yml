@@ -105,4 +105,7 @@ comments:
   enable: false
   # 使用哪种评论插件["gitment", "valine"]
   type: "valine"
-  
+
+# 中国ICP备案登记
+icp:
+  enable: true

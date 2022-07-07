@@ -12,3 +12,6 @@
         else
             - let copyright = `&copy;${nowYear} By ${config.author}`
             .copyright!= copyright
+        if theme.icp.enable
+            - let icp = `&nbsp; ${config.icp}`
+            a(href="https://beian.miit.gov.cn/" target="_blank")!= icp
