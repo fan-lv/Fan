@@ -126,6 +126,14 @@ top: 1
 
 <img width='999' src='https://lv-fan.gitee.io/blog_demo.png' alt='主题预览图'>
 
+### ICP备案号
+在本主题的_config中添加
+```yaml
+icp:
+  enable:true
+```
+同时在hexo的_config中添加`icp: 你的ICP备案号`
+在主题的
 ## License
 [MIT](https://opensource.org/licenses/MIT)
 
