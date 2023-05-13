@@ -110,5 +110,5 @@ post_copyright:
 # 评论
 comments:
   enable: false
-  # 使用哪种评论插件["gitment", "valine"]
+  # 使用哪种评论插件["gitment", "valine","twikoo"]
   type: "valine"
