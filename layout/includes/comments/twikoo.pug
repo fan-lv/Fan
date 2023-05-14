@@ -1,0 +1,28 @@
+#comments-container.post-copyright.twikoo
+    script(src=url_for('/js/comments/twikoo.all.min.js'))
+    script.
+        let arr = location.href.split('/#more')[0].split('/');
+        let title = arr[arr.length - 1];
+        if (title === '') {
+            title = arr[arr.length - 2];
+        }
+        var flag = false;
+        var gitFun = function () {
+            try {
+                var twikooObj = window.GLOBAL_CONFIG.twikoo;
+                twikoo.init({
+                    envId: twikooObj.envId,
+                    el: "#comments-container",
+                });
+                flag = true;
+            } catch (e) {
+                flag = false;
+            }
+        }
+        var setIn = setInterval(() => {
+            if (!flag) {
+                gitFun();
+            } else {
+                clearInterval(setIn);
+            }
+        }, 200);
