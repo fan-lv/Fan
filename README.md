@@ -1,6 +1,6 @@
 <h1 align="center">Fan</h1>
 <p align="center">这是一个深色主题，如梦幻般的星空，群星闪烁。</p>
-<p align="center"><a href="https://lv-fan.gitee.io/"><b>Preview</b></a></p>
+<p align="center"><a href="https://fan-lv.github.io"><b>Preview</b></a></p>
 
 ## Install
 
@@ -124,7 +124,7 @@ top: 1
     ```
     > 注意，每次更新文章后记得执行 `hexo algolia` 更新索引。
 
-<img width='999' src='https://lv-fan.gitee.io/blog_demo.png' alt='主题预览图'>
+<img width='999' src='https://fan-lv.github.io/blog_demo.png' alt='主题预览图'>
 
 ## License
 [MIT](https://opensource.org/licenses/MIT)
