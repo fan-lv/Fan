@@ -24,6 +24,10 @@ toc:
     data:
       - url: https://github.com/fan-lv
         text: 友链1:这是简介
+      - url: https://github.com/fan-lv
+        text: 友链2
+      - url: https://github.com/fan-lv
+        text: 友链3
 
 # Footer Settings
 # ---------------
@@ -42,7 +46,8 @@ links:
       text: GitHub
     - url: mailto:15757856604@163.com
       text: E-Mail
-
+    - url: tencent://message/?uin=1019593584&Site=&Menu=yes
+      text: QQ
 
 # busuanzi count for PV / UV in site
 busuanzi:
@@ -93,7 +98,7 @@ auto_excerpt:
 
 # algolia 搜索
 algolia_search:
-  enable: false
+  enable: true
   hits:
     per_page: 10
 
@@ -109,6 +114,6 @@ post_copyright:
 
 # 评论
 comments:
-  enable: false
+  enable: true
   # 使用哪种评论插件["gitment", "valine","twikoo"]
   type: "valine"

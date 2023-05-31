@@ -26,32 +26,32 @@
       }
     })
   }
-  
-  var gitment = JSON.stringify({});
-  var valine = JSON.stringify({});
-  var twikoo = JSON.stringify({});
+
   if(theme.comments.enable){
-    
+    var gitment = JSON.stringify({});
+    var valine = JSON.stringify({});
+    var twikoo = JSON.stringify({});
+
     switch(theme.comments.type){
       case "gitment":
         gitment = JSON.stringify({
-          owner: theme.comments.gitment.owner,
-          repo: theme.comments.gitment.repo,
-          client_id: theme.comments.gitment.client_id,
-          client_secret: theme.comments.gitment.client_secret
+          owner: config.comments.gitment.owner,
+          repo: config.comments.gitment.repo,
+          client_id: config.comments.gitment.client_id,
+          client_secret: config.comments.gitment.client_secret
         });
         break;
       case "valine":
         var obj={};
-        for(var key in theme.comments.valine){
-          obj[key] = theme.comments.valine[key];
+        for(var key in config.comments.valine){
+          obj[key] = config.comments.valine[key];
         }
         valine = JSON.stringify(obj);
         break;
       case "twikoo":
         var obj={};
-        for(var key in theme.comments.twikoo){
-          obj[key] = theme.comments.twikoo[key];
+        for(var key in config.comments.twikoo){
+          obj[key] = config.comments.twikoo[key];
         }
         twikoo = JSON.stringify(obj);
         break;
