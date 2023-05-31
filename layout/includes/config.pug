@@ -26,9 +26,10 @@
       }
     })
   }
-  
+
   var gitment = JSON.stringify({});
   var valine = JSON.stringify({});
+  var twikoo = JSON.stringify({});
   if(theme.comments.enable){
     switch(theme.comments.type){
       case "gitment":
@@ -46,6 +47,13 @@
         }
         valine = JSON.stringify(obj);
         break;
+      case "twikoo":
+        var obj={};
+        for(var key in config.comments.twikoo){
+          obj[key] = config.comments.twikoo[key];
+        }
+        twikoo = JSON.stringify(obj);
+        break;
     }
   }
 
@@ -61,4 +69,5 @@ script.
     },
     gitment: !{gitment},
     valine: !{valine},
+    twikoo: !{twikoo},
   }

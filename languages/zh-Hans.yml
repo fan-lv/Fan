@@ -43,7 +43,7 @@ post:
     author: 本文作者
     link: 本文链接
     copyright_notice: 版权声明
-    copyright_content: '本博客所有文章除特别声明外，均采用 <a href="%s">%s</a> 许可协议。转载请注明来自 <a href="%s">%s</a>！'
+    copyright_content: '本站点所有文章除特别声明外，均采用 <a href="%s">%s</a> 许可协议。转载请注明来自 <a href="%s">%s</a>！'
 
 page:
   totally: 共有

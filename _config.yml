@@ -4,10 +4,10 @@
 # main menu navigation
 menu:
   Home: /
-  # Tags: /tags
-  # Categories: /categories
+  Tags: /tags
+  Categories: /categories
   Archives: /archives
-  # About: /about
+  About: /about
 
 # Miscelaneous
 favicon: /favicon.ico
@@ -22,20 +22,32 @@ toc:
   friendlink:
     enable: false
     data:
-      - url: https://github.com/GCS-ZHN
-        text: GitHub
+      - url: https://github.com/fan-lv
+        text: 友链1:这是简介
+      - url: https://github.com/fan-lv
+        text: 友链2
+      - url: https://github.com/fan-lv
+        text: 友链3
 
 # Footer Settings
 # ---------------
-since: 2017
+footer:
+  since:
+    enable: true
+    year: 2017
+  beian:
+    enable: false
+    icp: ''
 
 links:
   enable: true
   data:
-    - url: https://github.com/GCS-ZHN
+    - url: https://github.com/fan-lv
       text: GitHub
-    - url: mailto:zhang.h.n@foxmail.com
+    - url: mailto:15757856604@163.com
       text: E-Mail
+    - url: tencent://message/?uin=1019593584&Site=&Menu=yes
+      text: QQ
 
 # busuanzi count for PV / UV in site
 busuanzi:
@@ -86,7 +98,7 @@ auto_excerpt:
 
 # algolia 搜索
 algolia_search:
-  enable: false
+  enable: true
   hits:
     per_page: 10
 
@@ -102,10 +114,6 @@ post_copyright:
 
 # 评论
 comments:
-  enable: false
-  # 使用哪种评论插件["gitment", "valine"]
-  type: "valine"
-
-# 中国ICP备案登记
-icp:
   enable: true
+  # 使用哪种评论插件["gitment", "valine","twikoo"]
+  type: "valine"
