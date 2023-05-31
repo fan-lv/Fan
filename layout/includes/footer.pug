@@ -10,7 +10,7 @@
             - let copyrightSince
             if theme.footer.since.year != nowYear
                 - copyrightSince = `&copy;${theme.footer.since.year} ～ ${nowYear} By ${config.author}`
-            else 
+            else
                 - copyrightSince = `&copy;${nowYear} By ${config.author}`
             .copyright!= copyrightSince
         if theme.footer.beian.enable
